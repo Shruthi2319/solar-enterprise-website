@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Sun, Zap, IndianRupee, Phone, Menu, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import logo from '@/assets/logo.png'
+import heroBg from '@/assets/solar-hero-bg.jpg'
 
 export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,13 +29,19 @@ export function Hero() {
   ]
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-solar-blue via-[#0f2847] to-[#0a1f3d]">
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-br from-solar-blue/90 via-[#0f2847]/85 to-[#0a1f3d]/80" />
+      </div>
+
       {/* Decorative sun rays */}
       <div className="absolute top-[-200px] right-[-100px] w-[600px] h-[600px] rounded-full bg-solar-orange/10 blur-[120px]" />
       <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-solar-green/10 blur-[100px]" />
 
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-solar-blue/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-solar-blue shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-2">
             <img src={logo} alt="Sri Ananthaguna Enterprises" className="h-12 w-12 rounded-full bg-white p-0.5" />
@@ -46,7 +53,7 @@ export function Hero() {
 
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map(link => (
-              <a key={link.href} href={link.href} className="text-white/90 hover:text-solar-yellow font-medium text-sm gentle-animation">
+              <a key={link.href} href={link.href} className="text-white hover:text-solar-yellow font-medium text-sm gentle-animation">
                 {link.label}
               </a>
             ))}

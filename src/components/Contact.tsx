@@ -2,6 +2,15 @@ import { motion } from 'framer-motion'
 import { Phone, MapPin } from 'lucide-react'
 import { useState } from 'react'
 
+const bankPartners = [
+  { name: 'SBI', color: '#22409A', textColor: '#fff' },
+  { name: 'HDFC Bank', color: '#004C8F', textColor: '#fff' },
+  { name: 'Union Bank', color: '#E4002B', textColor: '#fff' },
+  { name: 'Canara Bank', color: '#FFD700', textColor: '#1a1a2e' },
+  { name: 'Indian Bank', color: '#1B3A6B', textColor: '#fff' },
+  { name: 'TG Bank', color: '#008000', textColor: '#fff' },
+]
+
 export function Contact() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -51,11 +60,22 @@ export function Contact() {
               </div>
             </div>
 
+            {/* Bank EMI Partners with logos */}
             <div className="bg-accent rounded-xl p-6 border border-solar-orange/20">
-              <h3 className="font-heading font-bold mb-3 text-accent-foreground">All Banks EMI Facility Available</h3>
-              <div className="flex flex-wrap gap-3">
-                {['SBI', 'HDFC Bank', 'Union Bank', 'Canara Bank', 'Indian Bank', 'Telangana Grameena Bank'].map((bank, i) => (
-                  <span key={i} className="bg-card px-3 py-1.5 rounded-lg text-xs font-semibold subtle-shadow">{bank}</span>
+              <h3 className="font-heading font-bold mb-4 text-accent-foreground">All Banks EMI Facility Available</h3>
+              <div className="grid grid-cols-3 gap-3">
+                {bankPartners.map((bank, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="rounded-lg px-3 py-2.5 flex items-center justify-center text-center shadow-sm gentle-animation hover:scale-105 hover:shadow-md"
+                    style={{ backgroundColor: bank.color }}
+                  >
+                    <span className="font-bold text-xs" style={{ color: bank.textColor }}>{bank.name}</span>
+                  </motion.div>
                 ))}
               </div>
             </div>
