@@ -8,6 +8,13 @@ const features = [
   { icon: MapPin, title: 'Local Service', desc: 'Based in Hanamkonda & Mancherial with dedicated after-sales support.' },
 ]
 
+const solarBrands = [
+  { name: 'Tata Power Solar', color: '#00457C', textColor: '#ffffff' },
+  { name: 'Waaree', color: '#E31E24', textColor: '#ffffff' },
+  { name: 'Adani Solar', color: '#004B93', textColor: '#ffffff' },
+  { name: 'Vikram Solar', color: '#F7941D', textColor: '#ffffff' },
+]
+
 export function About() {
   return (
     <section className="py-20 px-4 bg-secondary">
@@ -20,13 +27,24 @@ export function About() {
               We are a trusted solar energy provider based in Hanamkonda and Mancherial, Telangana. As an MNRE-approved vendor, we help homes and businesses switch to clean, affordable solar energy with full government subsidy support.
             </p>
             <p className="text-muted-foreground mb-8">
-              We partner with India's top solar brands — Tata Power Solar, Waaree, Adani Solar, and Vikram Solar — to deliver reliable, high-performance solar systems with 25+ year warranties.
+              We partner with India's top solar brands to deliver reliable, high-performance solar systems with 25+ year warranties.
             </p>
-            <div className="flex flex-wrap items-center gap-6">
-              {['Tata Power Solar', 'Waaree', 'Adani Solar', 'Vikram Solar'].map((brand, i) => (
-                <div key={i} className="bg-card px-4 py-2 rounded-lg subtle-shadow text-sm font-semibold text-muted-foreground">
-                  {brand}
-                </div>
+
+            {/* Solar Brand Logos */}
+            <h3 className="font-heading font-bold text-lg mb-4">Our Solar Partners</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {solarBrands.map((brand, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="rounded-xl p-4 flex items-center justify-center text-center shadow-md gentle-animation hover:scale-105 hover:shadow-lg"
+                  style={{ backgroundColor: brand.color }}
+                >
+                  <span className="font-bold text-sm leading-tight" style={{ color: brand.textColor }}>{brand.name}</span>
+                </motion.div>
               ))}
             </div>
           </motion.div>

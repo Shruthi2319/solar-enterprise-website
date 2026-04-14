@@ -38,11 +38,11 @@ export function Pricing() {
           </div>
         </motion.div>
 
-        {/* Pricing cards - show top 4 as cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {plans.slice(0, 4).map((plan, i) => (
+        {/* Pricing cards - all plans */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {plans.map((plan, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }} transition={{ delay: i * 0.05 }}
               className={`rounded-2xl p-6 border-2 gentle-animation hover:scale-105 ${
                 plan.popular ? 'border-solar-orange bg-accent shadow-lg relative' : 'border-border bg-card'
               }`}>
@@ -77,37 +77,6 @@ export function Pricing() {
             </motion.div>
           ))}
         </div>
-
-        {/* Full pricing table */}
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-          className="overflow-x-auto rounded-xl border border-border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-solar-blue text-white">
-                <th className="px-4 py-3 text-left font-semibold">Capacity</th>
-                <th className="px-4 py-3 text-right font-semibold">Total Cost</th>
-                <th className="px-4 py-3 text-right font-semibold">Net Metering</th>
-                <th className="px-4 py-3 text-right font-semibold">TSREDCO Fee</th>
-                <th className="px-4 py-3 text-right font-semibold">Govt Subsidy</th>
-                <th className="px-4 py-3 text-right font-semibold">You Pay</th>
-                <th className="px-4 py-3 text-right font-semibold">Units/Month</th>
-              </tr>
-            </thead>
-            <tbody>
-              {plans.map((plan, i) => (
-                <tr key={i} className={`border-t border-border ${i % 2 === 0 ? 'bg-muted/30' : 'bg-card'} hover:bg-muted/50`}>
-                  <td className="px-4 py-3 font-semibold">{plan.kw} KW</td>
-                  <td className="px-4 py-3 text-right">₹{plan.total}/-</td>
-                  <td className="px-4 py-3 text-right">₹{plan.netMetering}/-</td>
-                  <td className="px-4 py-3 text-right">₹{plan.tsredco}/-</td>
-                  <td className="px-4 py-3 text-right text-solar-green font-semibold">₹{plan.subsidy}/-</td>
-                  <td className="px-4 py-3 text-right font-bold text-solar-orange">₹{plan.beneficiary}/-</td>
-                  <td className="px-4 py-3 text-right">{plan.units}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </motion.div>
       </div>
     </section>
   )
