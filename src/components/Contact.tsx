@@ -1,14 +1,20 @@
 import { motion } from 'framer-motion'
 import { Phone, MapPin } from 'lucide-react'
 import { useState } from 'react'
+import sbiLogo from '@/assets/SBI-Logo.png'
+import hdfcLogo from '@/assets/HDFC-Bank-Logo.png'
+import canaraLogo from '@/assets/Canara_bank.jpg'
+import unionLogo from '@/assets/union_bank.jpg'
+import indianLogo from '@/assets/Indian_bank.png'
+import tgBankLogo from '@/assets/Telangana_Grameena_bank.jpg'
 
-const bankPartners = [
-  { name: 'SBI', color: '#22409A', textColor: '#fff' },
-  { name: 'HDFC Bank', color: '#004C8F', textColor: '#fff' },
-  { name: 'Union Bank', color: '#E4002B', textColor: '#fff' },
-  { name: 'Canara Bank', color: '#FFD700', textColor: '#1a1a2e' },
-  { name: 'Indian Bank', color: '#1B3A6B', textColor: '#fff' },
-  { name: 'TG Bank', color: '#008000', textColor: '#fff' },
+const bankLogos = [
+  { name: 'SBI', logo: sbiLogo },
+  { name: 'HDFC', logo: hdfcLogo },
+  { name: 'Canara', logo: canaraLogo },
+  { name: 'Union', logo: unionLogo },
+  { name: 'Indian', logo: indianLogo },
+  { name: 'TG Bank', logo: tgBankLogo },
 ]
 
 export function Contact() {
@@ -26,10 +32,10 @@ export function Contact() {
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-center mb-16">
-          <span className="text-solar-green font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold mt-2 mb-4">Book Your Free Consultation</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          className="text-center mb-20">
+          <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Get In Touch</span>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue tracking-tighter mt-2 mb-8">Free Consultation</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg font-normal leading-relaxed tracking-wide">
             Contact us today for a free site survey and customized solar solution for your home or business.
           </p>
         </motion.div>
@@ -43,8 +49,8 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="font-heading font-bold mb-1">Call Us</h3>
-                <a href="tel:9848977723" className="text-solar-blue font-semibold text-lg hover:text-solar-orange gentle-animation block">98489 77723</a>
-                <a href="tel:8106785265" className="text-solar-blue font-semibold text-lg hover:text-solar-orange gentle-animation block">8106785265</a>
+                <a href="tel:9848977723" className="text-solar-blue font-bold text-lg hover:text-solar-orange gentle-animation block tracking-wide">98489 77723</a>
+                <a href="tel:8106785265" className="text-solar-blue font-bold text-lg hover:text-solar-orange gentle-animation block tracking-wide">8106785265</a>
               </div>
             </div>
 
@@ -54,55 +60,46 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="font-heading font-bold mb-1">Main Office</h3>
-                <p className="text-muted-foreground text-sm">H.No. 5-11-491, Srinagar Colony, Naim Nagar, Hanamkonda - 506001</p>
+                <p className="text-slate-700 text-sm font-semibold tracking-wide">H.No. 5-11-491, Srinagar Colony, Naim Nagar, Hanamkonda - 506001</p>
                 <h3 className="font-heading font-bold mt-4 mb-1">Branch Office</h3>
-                <p className="text-muted-foreground text-sm">#19-46, Behind Garmilla SBI Bank, Ram Nagar, Mancherial - 504208</p>
+                <p className="text-slate-700 text-sm font-semibold tracking-wide">#19-46, Behind Garmilla SBI Bank, Ram Nagar, Mancherial - 504208</p>
               </div>
             </div>
 
-            {/* Bank EMI Partners with logos */}
-            <div className="bg-accent rounded-xl p-6 border border-solar-orange/20">
-              <h3 className="font-heading font-bold mb-4 text-accent-foreground">All Banks EMI Facility Available</h3>
-              <div className="grid grid-cols-3 gap-3">
-                {bankPartners.map((bank, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="rounded-lg px-3 py-2.5 flex items-center justify-center text-center shadow-sm gentle-animation hover:scale-105 hover:shadow-md"
-                    style={{ backgroundColor: bank.color }}
-                  >
-                    <span className="font-bold text-xs" style={{ color: bank.textColor }}>{bank.name}</span>
-                  </motion.div>
+            {/* Project Partners in Contact */}
+            <div className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-3xl shadow-slate-200/40">
+              <h3 className="font-heading font-bold text-xl text-solar-blue mb-2 tracking-tight">Strategic Project Partners</h3>
+              <p className="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-8 opacity-60">Trusted banking & technology associates</p>
+              <div className="flex flex-wrap gap-x-8 gap-y-6 transition-all duration-500">
+                {bankLogos.map((bank, i) => (
+                  <img key={i} src={bank.logo} alt={bank.name} className="h-6 w-auto object-contain grayscale-0 opacity-100 hover:scale-110 transition-transform" />
                 ))}
               </div>
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 subtle-shadow space-y-5">
+            <form onSubmit={handleSubmit} className="bg-white rounded-[2rem] p-10 shadow-3xl shadow-slate-200/40 border border-slate-100 space-y-6">
               <div>
-                <label className="text-sm font-medium mb-1.5 block">Your Name</label>
+                <label className="text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-80">Your Name</label>
                 <input type="text" value={name} onChange={e => setName(e.target.value)} required
-                  className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground" placeholder="Enter your name" />
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 text-foreground font-semibold" placeholder="Enter your full name" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-1.5 block">Phone Number</label>
+                <label className="text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-80">Phone Number</label>
                 <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} required
-                  className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground" placeholder="Your phone number" />
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 text-foreground font-semibold" placeholder="Your active contact number" />
               </div>
               <div>
-                <label className="text-sm font-medium mb-1.5 block">Message</label>
+                <label className="text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-80">Message</label>
                 <textarea value={message} onChange={e => setMessage(e.target.value)} rows={4}
-                  className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground resize-none" placeholder="I'm interested in solar panels for my home..." />
+                  className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-4 py-3 text-foreground font-semibold resize-none" placeholder="How can we assist you with solar today?" />
               </div>
               <button type="submit"
-                className="w-full bg-solar-green hover:bg-solar-green-dark text-white font-bold py-3.5 rounded-lg gentle-animation">
-                Send via WhatsApp
+                className="w-full bg-solar-green hover:bg-solar-green-dark text-white font-bold py-4 rounded-xl shadow-2xl shadow-solar-green/40 transition-all duration-300">
+                Consult via WhatsApp
               </button>
-              <p className="text-center text-muted-foreground text-xs">Or call directly: <a href="tel:9848977723" className="text-solar-orange font-semibold">98489 77723</a></p>
+              <p className="text-center text-slate-500 text-[10px] font-bold tracking-widest uppercase">Or dial expert directly: <a href="tel:9848977723" className="text-solar-orange font-bold">98489 77723</a></p>
             </form>
           </motion.div>
         </div>

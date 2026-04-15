@@ -27,36 +27,41 @@ const services = [
     title: 'Subsidy Assistance',
     description: 'End-to-end support for government subsidy applications. MNRE approved vendor for Pradhan Mantri Surya Ghar Yojana.',
   },
-  {
-    icon: Banknote,
-    title: 'EMI & Financing',
-    description: 'Easy EMI options through SBI, HDFC, Union Bank, Canara Bank & Indian Bank. 0% down payment available.',
-  },
 ]
 
 export function Services() {
   return (
-    <section className="py-20 px-4 bg-secondary">
+    <section className="py-24 px-4 bg-slate-50">
       <div className="max-w-7xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-center mb-16">
-          <span className="text-solar-green font-semibold text-sm uppercase tracking-wider">Our Services</span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold mt-2 mb-4">Complete Solar Solutions</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            From consultation to installation, we handle everything. MNRE approved with top-tier solar brands.
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="text-center mb-24">
+          <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Our Expertise</span>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue tracking-tighter mt-2 mb-8">Complete Solar Solutions</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg font-normal leading-relaxed tracking-wide">
+            From expert consultation to seamless installation, we handle everything. MNRE approved vendor with top-tier solar equipment.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((service, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-xl p-8 subtle-shadow hover:elevated-shadow gentle-animation group">
-              <div className="w-14 h-14 rounded-xl bg-solar-green/10 flex items-center justify-center mb-5 group-hover:bg-solar-green/20 gentle-animation">
-                <service.icon className="w-7 h-7 text-solar-green" />
+              className="bg-white rounded-[2rem] p-10 shadow-3xl shadow-slate-200/40 border border-slate-100 hover:shadow-solar-green/10 hover:-translate-y-2 transition-all duration-500 group flex flex-col">
+              <div className="flex-grow">
+                <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-10 group-hover:bg-solar-green group-hover:rotate-6 transition-all duration-500">
+                  <service.icon className="w-8 h-8 text-solar-green group-hover:text-white transition-colors duration-500" />
+                </div>
+                <h3 className="font-heading font-bold text-2xl text-solar-blue tracking-tight mb-4 group-hover:text-solar-green transition-colors">{service.title}</h3>
+                <p className="text-slate-600 font-normal leading-relaxed tracking-wide mb-8">{service.description}</p>
               </div>
-              <h3 className="font-heading font-bold text-lg mb-3">{service.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+              <button 
+                onClick={() => {
+                  const msg = encodeURIComponent(`Hi, I'm interested in your ${service.title} service. Please provide more information.`)
+                  window.open(`https://wa.me/919848977723?text=${msg}`, '_blank')
+                }}
+                className="w-full py-4 rounded-xl border-2 border-slate-100 text-solar-blue font-bold text-sm tracking-wide hover:bg-solar-green hover:border-solar-green hover:text-white transition-all duration-300">
+                Quick Inquiry
+              </button>
             </motion.div>
           ))}
         </div>

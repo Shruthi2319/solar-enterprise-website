@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 import { Shield, Award, Users, MapPin } from 'lucide-react'
+import tataLogo from '@/assets/Tata Power.png'
+import waareeLogo from '@/assets/waree_solar.png'
+import adaniLogo from '@/assets/adani_solar.webp'
+import vikramLogo from '@/assets/Vikram_Solar_logo.png'
 
 const features = [
   { icon: Shield, title: 'MNRE Approved', desc: 'Certified and approved by the Ministry of New and Renewable Energy, Government of India.' },
@@ -8,57 +12,59 @@ const features = [
   { icon: MapPin, title: 'Local Service', desc: 'Based in Hanamkonda & Mancherial with dedicated after-sales support.' },
 ]
 
-const solarBrands = [
-  { name: 'Tata Power Solar', color: '#00457C', textColor: '#ffffff' },
-  { name: 'Waaree', color: '#E31E24', textColor: '#ffffff' },
-  { name: 'Adani Solar', color: '#004B93', textColor: '#ffffff' },
-  { name: 'Vikram Solar', color: '#F7941D', textColor: '#ffffff' },
-]
-
 export function About() {
   return (
-    <section className="py-20 px-4 bg-secondary">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-solar-green font-semibold text-sm uppercase tracking-wider">About Us</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold mt-2 mb-6">Sri Ananthaguna Enterprises</h2>
-            <p className="text-muted-foreground mb-4">
-              We are a trusted solar energy provider based in Hanamkonda and Mancherial, Telangana. As an MNRE-approved vendor, we help homes and businesses switch to clean, affordable solar energy with full government subsidy support.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              We partner with India's top solar brands to deliver reliable, high-performance solar systems with 25+ year warranties.
-            </p>
+    <section className="py-24 px-4 bg-slate-50 overflow-hidden relative">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-solar-green/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Who We Are</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue mt-2 mb-8 tracking-tighter leading-[1.1]">Sri Ananthaguna Enterprises</h2>
+            <div className="space-y-6 text-slate-600 font-normal text-lg leading-relaxed tracking-wide">
+              <p>
+                We are a trusted solar energy provider based in <span className="text-solar-blue font-bold">Hanamkonda</span> and <span className="text-solar-blue font-bold">Mancherial</span>, Telangana.
+              </p>
+              <p>
+                As an MNRE-approved vendor, we help homeowners and businesses switch to clean, affordable solar energy with end-to-end support for government subsidies under the PM Surya Ghar Yojana.
+              </p>
+            </div>
 
-            {/* Solar Brand Logos */}
-            <h3 className="font-heading font-bold text-lg mb-4">Our Solar Partners</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {solarBrands.map((brand, i) => (
+            <h3 className="font-heading font-bold text-xl text-solar-blue mt-12 mb-6 tracking-tight">Our Premium Solar Partners</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {[
+                { name: 'Tata Power', logo: tataLogo },
+                { name: 'Waaree', logo: waareeLogo },
+                { name: 'Adani Solar', logo: adaniLogo },
+                { name: 'Vikram Solar', logo: vikramLogo },
+              ].map((brand, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl p-4 flex items-center justify-center text-center shadow-md gentle-animation hover:scale-105 hover:shadow-lg"
-                  style={{ backgroundColor: brand.color }}
+                  className="bg-white rounded-[2rem] p-6 flex items-center justify-center h-28 shadow-3xl shadow-slate-200/20 border border-slate-100 hover:shadow-2xl transition-all duration-300 group"
                 >
-                  <span className="font-bold text-sm leading-tight" style={{ color: brand.textColor }}>{brand.name}</span>
+                  <img src={brand.logo} alt={brand.name} className="max-h-12 max-w-full object-contain group-hover:scale-110 transition-transform duration-500" />
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+            <div className="absolute -inset-4 bg-solar-green/5 -rotate-2 rounded-3xl -z-10"></div>
             {features.map((feature, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-xl p-6 subtle-shadow">
-                <div className="w-12 h-12 rounded-lg bg-solar-green/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-solar-green" />
+                className="bg-white rounded-[2rem] p-8 shadow-3xl shadow-slate-200/20 border border-slate-100 hover:border-solar-green transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-solar-green/10 flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-solar-green" />
                 </div>
-                <h3 className="font-heading font-bold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                <h3 className="font-heading font-bold text-solar-blue text-xl mb-3 tracking-tight">{feature.title}</h3>
+                <p className="text-slate-600 font-normal text-sm leading-relaxed tracking-wide">{feature.desc}</p>
               </motion.div>
             ))}
           </div>

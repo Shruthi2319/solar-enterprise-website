@@ -3,45 +3,55 @@ import { Sun } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-solar-blue text-white py-16 px-4">
+    <footer className="bg-[#0f172a] text-white py-24 px-4 border-t border-slate-800">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Sri Ananthaguna Enterprises" className="h-12 w-12 rounded-full bg-white p-0.5" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-4 mb-8">
+              <img src={logo} alt="Sri Ananthaguna Enterprises" className="h-14 w-14 rounded-full bg-white p-0.5 shadow-2xl" />
               <div>
-                <div className="font-heading font-bold">Sri Ananthaguna</div>
-                <div className="text-solar-yellow text-sm">Enterprises</div>
+                <div className="font-heading font-bold text-xl tracking-tight">Sri Ananthaguna</div>
+                <div className="text-solar-orange text-xs font-bold uppercase tracking-[0.3em]">Enterprises</div>
               </div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">MNRE approved solar energy provider. Complete solar solutions for homes and businesses in Telangana.</p>
+            <p className="text-white/60 text-base font-normal leading-relaxed max-w-sm tracking-wide">
+              MNRE approved solar energy provider. Delivering high-performance, sustainable energy solutions across Telangana since 2012.
+            </p>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold mb-4">Quick Links</h4>
-            <div className="space-y-2 text-sm">
+            <h4 className="font-heading font-bold text-lg mb-8 tracking-tight">Quick Links</h4>
+            <div className="space-y-4">
               {['Services', 'Plans & Pricing', 'Solar Calculator', 'About Us', 'Contact'].map((link, i) => (
                 <a key={i} href={`#${['services', 'pricing', 'calculator', 'about', 'contact'][i]}`}
-                  className="block text-white/70 hover:text-solar-yellow gentle-animation">{link}</a>
+                  className="block text-white/60 hover:text-white font-bold transition-all tracking-wide">{link}</a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold mb-4">Contact Info</h4>
-            <div className="space-y-3 text-sm text-white/70">
-              <p>📞 98489 77723 / 8106785265</p>
-              <p>📍 Srinagar Colony, Naim Nagar, Hanamkonda - 506001</p>
-              <p>📍 Ram Nagar, Mancherial - 504208</p>
+            <h4 className="font-heading font-bold text-lg mb-8 tracking-tight">Contact Info</h4>
+            <div className="space-y-6">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-solar-orange mb-1">Direct Lines</span>
+                <div className="flex flex-col text-sm font-bold gap-1 text-white/80">
+                  <a href="tel:9848977723" className="hover:text-white transition-colors">98489 77723</a>
+                  <a href="tel:8106785265" className="hover:text-white transition-colors">8106785265</a>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-solar-orange mb-1">Service Areas</span>
+                <p className="text-white/60 font-bold text-sm leading-relaxed">Hanamkonda & Mancherial regions,<br/>Telangana, India</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-sm">© {new Date().getFullYear()} Sri Ananthaguna Enterprises. All rights reserved.</p>
-          <div className="flex items-center gap-2 text-white/50 text-sm">
-            <Sun className="w-4 h-4 text-solar-yellow" />
-            <span>Powering a greener future</span>
+        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-8 opacity-40">
+          <p className="text-xs font-bold tracking-widest uppercase">© {new Date().getFullYear()} Sri Ananthaguna Enterprises</p>
+          <div className="flex items-center gap-3">
+            <Sun className="w-4 h-4 text-solar-orange" />
+            <span className="text-[10px] font-extrabold uppercase tracking-[0.3em]">Powering the future</span>
           </div>
         </div>
       </div>

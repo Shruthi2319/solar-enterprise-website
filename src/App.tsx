@@ -6,10 +6,12 @@ import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { StickyCTA } from './components/StickyCTA'
+import { SubsidyModal } from './components/SubsidyModal'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SubsidyModal />
       <main>
         <section id="hero"><Hero /></section>
         <section id="services"><Services /></section>
