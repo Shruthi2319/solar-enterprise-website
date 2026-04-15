@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Check, Star } from 'lucide-react'
 import sbiLogo from '@/assets/SBI-Logo.png'
 import hdfcLogo from '@/assets/HDFC-Bank-Logo.png'
-import canaraLogo from '@/assets/Canara_bank.jpg'
+import canaraLogo from '@/assets/Canara-Bank-Logo.png'
 import unionLogo from '@/assets/union_bank.jpg'
 import indianLogo from '@/assets/Indian_bank.png'
 
@@ -35,8 +35,8 @@ Please contact me for more details.`)
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-16">
-          <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Investment Opportunity</span>
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue mt-2 mb-8 tracking-tighter">Sustainable Savings Plan</h2>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-600 font-black text-lg md:text-2xl uppercase tracking-[0.2em] mb-4 block opacity-100 drop-shadow-sm">Investment Opportunity</span>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-red-500 mt-2 mb-8 pb-2 tracking-tighter">Sustainable Savings Plan</h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg font-normal leading-relaxed tracking-wide">
             Authorized MNRE Vendor. Get direct government subsidies and high-performance solar technology with transparent pricing.
           </p>
@@ -109,8 +109,8 @@ Please contact me for more details.`)
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="mt-24 pt-16 border-t border-slate-100">
           <div className="text-center mb-12">
-            <h3 className="font-heading font-extrabold text-2xl text-solar-blue mb-2 tracking-tight">Our Financing Partners</h3>
-            <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] opacity-60">Easy EMI & Solar Loans Available Through</p>
+            <h3 className="font-heading font-black text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-red-500 mb-4 pb-2 tracking-tight">Our Financing Partners</h3>
+            <p className="text-slate-500 font-black tracking-[0.2em] uppercase text-sm md:text-base opacity-80">Easy EMI & Solar Loans Available Through</p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500 group">
             {[
@@ -120,7 +120,7 @@ Please contact me for more details.`)
               { name: 'Union Bank', logo: unionLogo },
               { name: 'Indian Bank', logo: indianLogo },
             ].map((bank, i) => (
-              <img key={i} src={bank.logo} alt={bank.name} className="h-8 md:h-12 w-auto transition-all duration-300 object-contain hover:scale-110" />
+              <img key={i} src={bank.logo} alt={bank.name} className="h-16 md:h-24 w-auto md:max-w-[200px] transition-all duration-300 object-contain hover:scale-110 drop-shadow-sm mix-blend-multiply" />
             ))}
           </div>
         </motion.div>

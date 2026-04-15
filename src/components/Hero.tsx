@@ -105,8 +105,8 @@ export function Hero() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full relative">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 lg:pt-36 pb-16 lg:pb-20 min-h-screen flex items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full relative">
           
           {/* Popping Floating Badge */}
           <motion.div
@@ -124,8 +124,8 @@ export function Hero() {
             <div className="inline-flex items-center gap-2 bg-solar-green/30 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold mb-8 border border-white/10 shadow-lg">
               <Sun className="w-4 h-4 text-solar-yellow" /> MNRE Approved · Govt Subsidy Available
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white tracking-tighter leading-[1.05] mb-8 drop-shadow-2xl">
-              Go Solar with <span className="text-solar-green font-bold block sm:inline">Expert</span> Installation
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-red-500 tracking-tighter leading-[1.05] mb-8 pb-2 drop-shadow-2xl">
+              Go Solar with <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-400 block sm:inline">Expert</span> Installation
             </h1>
             <p className="text-white/90 text-xl mb-10 max-w-xl font-normal leading-relaxed drop-shadow-lg tracking-wide">
               Get up to <strong className="text-solar-yellow font-bold underline underline-offset-4 decoration-solar-yellow/40">₹78,000</strong> government subsidy under Pradhan Mantri Surya Ghar Yojana. Save on electricity bills for 25+ years.

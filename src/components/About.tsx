@@ -19,10 +19,10 @@ export function About() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-solar-green/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Who We Are</span>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue mt-2 mb-8 tracking-tighter leading-[1.1]">Sri Ananthaguna Enterprises</h2>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-600 font-black text-lg md:text-2xl uppercase tracking-[0.2em] mb-4 block opacity-100 drop-shadow-sm">Who We Are</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-red-500 mt-2 mb-8 tracking-tighter leading-[1.1] pb-2">Sri Ananthaguna Enterprises</h2>
             <div className="space-y-6 text-slate-600 font-normal text-lg leading-relaxed tracking-wide">
               <p>
                 We are a trusted solar energy provider based in <span className="text-solar-blue font-bold">Hanamkonda</span> and <span className="text-solar-blue font-bold">Mancherial</span>, Telangana.
@@ -46,9 +46,9 @@ export function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-[2rem] p-6 flex items-center justify-center h-28 shadow-3xl shadow-slate-200/20 border border-slate-100 hover:shadow-2xl transition-all duration-300 group"
+                  className="bg-white rounded-[2rem] p-4 sm:p-6 flex items-center justify-center h-28 sm:h-32 shadow-3xl shadow-slate-200/20 border border-slate-100 hover:shadow-2xl transition-all duration-300 group"
                 >
-                  <img src={brand.logo} alt={brand.name} className="max-h-12 max-w-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                  <img src={brand.logo} alt={brand.name} className="max-h-16 sm:max-h-20 w-auto object-contain group-hover:scale-110 transition-transform duration-500" />
                 </motion.div>
               ))}
             </div>

@@ -35,8 +35,8 @@ export function Services() {
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center mb-24">
-          <span className="text-solar-green font-bold text-xs uppercase tracking-[0.4em] mb-4 block opacity-80">Our Expertise</span>
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-solar-blue tracking-tighter mt-2 mb-8">Complete Solar Solutions</h2>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-600 font-black text-lg md:text-2xl uppercase tracking-[0.2em] mb-4 block opacity-100 drop-shadow-sm">Our Expertise</span>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-red-500 tracking-tighter mt-2 mb-8 pb-2">Complete Solar Solutions</h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg font-normal leading-relaxed tracking-wide">
             From expert consultation to seamless installation, we handle everything. MNRE approved vendor with top-tier solar equipment.
           </p>
@@ -46,7 +46,7 @@ export function Services() {
           {services.map((service, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-[2rem] p-10 shadow-3xl shadow-slate-200/40 border border-slate-100 hover:shadow-solar-green/10 hover:-translate-y-2 transition-all duration-500 group flex flex-col">
+              className="bg-white rounded-[2rem] p-6 sm:p-10 shadow-3xl shadow-slate-200/40 border border-slate-100 hover:shadow-solar-green/10 hover:-translate-y-2 transition-all duration-500 group flex flex-col">
               <div className="flex-grow">
                 <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-10 group-hover:bg-solar-green group-hover:rotate-6 transition-all duration-500">
                   <service.icon className="w-8 h-8 text-solar-green group-hover:text-white transition-colors duration-500" />
